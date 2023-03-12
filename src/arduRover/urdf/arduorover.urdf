@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<robot name="ardurover">
+
+
+<link name="base_footprint"/>
+ 
+
+<link name="base_link">
+    <visual>
+        <geometry>
+             <box size="1.0 1.5 0.5" />
+         </geometry>
+        <material name="Blue">
+            <color rgba="0 0 1 1.0"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+             <box size="1.0 1.5 0.5" />
+         </geometry>
+    </collision>
+
+    <inertial>
+        <mass value="0.0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+</link>
+
+<joint name="base_link_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <axis xyz="0.0 0.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+</joint>
+
+
+<link name="wheel_front_right_link">
+    <visual>
+        <geometry>
+              <cylinder radius="0.3" length="0.15"/>
+        </geometry>
+        <material name="LightGrey">
+            <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+              <cylinder radius="0.3" length="0.15"/>
+        </geometry>
+    </collision>
+    <inertial>
+        <mass value="0.0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 1.6 0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+</link>
+
+<joint name="wheel_front_right_joint" type="continuous">
+    <origin xyz="0.6 0.5 -0.1" rpy="0.0 1.6 0.0"/>
+    <parent link="base_link"/>
+    <child link="wheel_front_right_link"/>
+    <axis xyz="0.0 0.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+</joint>
+
+<link name="wheel_front_left_link">
+    <visual>
+        <geometry>
+              <cylinder radius="0.3" length="0.15"/>
+        </geometry>
+        <material name="LightGrey">
+            <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+              <cylinder radius="0.3" length="0.15"/>
+        </geometry>
+    </collision>
+    <inertial>
+        <mass value="0.0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 1.6 0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+</link>
+
+<joint name="wheel_front_left_joint" type="continuous">
+    <origin xyz="-0.6 0.5 -0.1" rpy="0.0 1.6 0.0"/>
+    <parent link="base_link"/>
+    <child link="wheel_front_left_link"/>
+    <axis xyz="0.0 0.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+</joint>
+
+<link name="wheel_rear_left_link">
+    <visual>
+        <geometry>
+              <cylinder radius="0.3" length="0.15"/>
+        </geometry>
+        <material name="LightGrey">
+            <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+              <cylinder radius="0.3" length="0.15"/>
+        </geometry>
+    </collision>
+    <inertial>
+        <mass value="0.0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 1.6 0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+</link>
+
+<joint name="wheel_rear_left_joint" type="continuous">
+    <origin xyz="-0.6 -0.5 -0.1" rpy="0.0 1.6 0.0"/>
+    <parent link="base_link"/>
+    <child link="wheel_rear_left_link"/>
+    <axis xyz="0.0 0.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+</joint>
+
+<link name="wheel_rear_front_link">
+    <visual>
+        <geometry>
+              <cylinder radius="0.3" length="0.15"/>
+        </geometry>
+        <material name="LightGrey">
+            <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+              <cylinder radius="0.3" length="0.15"/>
+        </geometry>
+    </collision>
+    <inertial>
+        <mass value="0.0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 1.6 0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+</link>
+
+<joint name="wheel_rear_front_joint" type="continuous">
+    <origin xyz="0.6 -0.5 -0.1" rpy="0.0 1.6 0.0"/>
+    <parent link="base_link"/>
+    <child link="wheel_rear_front_link"/>
+    <axis xyz="0.0 0.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+</joint>
+
+
+<link name="camera">
+    <visual>
+        <geometry>
+             <box size="0.3 0.2 0.15" />
+         </geometry>
+        <material name="Green">
+            <color rgba="0.0 1 0.0 1.0"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+              <box size="0.3 0.3 0.3" />
+         </geometry>
+    </collision>
+    <inertial>
+        <mass value="0.0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+</link>
+
+<joint name="camera joint" type="fixed">
+    <origin xyz="0.0 0.63 0.3" rpy="0.0 0.0 0.0"/>
+    <parent link="base_link"/>
+    <child link="camera"/>
+    <axis xyz="0.0 0.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+</joint>
+
+<gazebo reference="camera">
+    <sensor type="camera" name="camera1">
+    <visualize>true</visualize>
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>320</width>
+          <height>329</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>7</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+
+
+
+</robot>

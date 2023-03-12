@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+<param name="robot_description" textfile="$(find arduRover)/urdf/arduorover.urdf"/>
+<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+<node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher"/>
+ 
+<include file="$(find gazebo_ros)/launch/empty_world.launch">
+     <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/> 
+    <arg name="debug" value="false"/>
+    </include>
+
+
+    <node name="spawing_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model ardurover -param robot_description" />
+
+</launch>

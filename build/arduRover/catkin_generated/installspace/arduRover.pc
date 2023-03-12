@@ -1,0 +1,8 @@
+prefix=/home/sparkrobotics/robo/install
+
+Name: arduRover
+Description: Description of arduRover
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
