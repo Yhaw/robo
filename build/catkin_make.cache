@@ -1,2 +1,2 @@
 arduRover
--DCATKIN_DEVEL_PREFIX=/home/sparkrobotics/robo/devel -DCMAKE_INSTALL_PREFIX=/home/sparkrobotics/robo/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/sparkrobotics/ros_chapter/jedd/robo/devel -DCMAKE_INSTALL_PREFIX=/home/sparkrobotics/ros_chapter/jedd/robo/install -G Unix Makefiles
